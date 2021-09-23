@@ -2,23 +2,79 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mark 15</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>ProfitLoss Calculator</title>
+    <link href="/styles.css" rel="stylesheet" />
   </head>
   <body>
-    <h1 class="heading">Mark 15 prject</h1>
-    <main>
-        <label for="initial-price" id="initial-price" >Initial Price</label>
-        <input type="text" placeholder="Enter initial price here">
-        <label for="stocks-quantity" id="stocks-quantity" type="text"> Quantity of stocks</label>
-        <input placeholder="Enter the number of stocks">
-        <label for="current-price" id="current-price" type="text">Current Price</label>
-        <input placeholder="Enter the current price of the stock">
-        <button id="submit-button">Let's find out</button>
+    <nav class="navigation container">
+      <div ><a class="nav-brand" href="https://thetrailblazer.in/">Hitesh Verma</a> </div>
+      <ul class="list-non-bullet nav-pills">
+        <li class="list-item-inline">
+          <a class="link" href="https://thetrailblazer.in/">Home</a>
+        </li>
+        <li class="list-item-inline">
+          <a class="link link-active" href="https://thetrailblazer.in/projects.html">Projects</a>
+        </li>
+        <li class="list-item-inline">
+          <a class="link" href="https://thetrailblazer.in/blogs.html">Blogs</a>
+        </li>
+      </ul>
+    </nav>
+   
+    <div style="height: 50vh;"></div><main>
+        <label for="initial-price"
+          >Initial Price
+          <input
+            type="number" min="0" oninput="validity.valid||(value='');"
+            id="initial-price"
+            placeholder="Enter initial price"
+          />
+        </label>
+        <label for="stocks-quantity"
+          >Stocks quantity
+          <input
+            type="number" min="1" oninput="validity.valid||(value='');"
+            id="stocks-quantity"
+            placeholder="Enter stocks quantity"
+            required="required"
+          />
+        </label>
+        <label for="current-price"
+          >Current Price
+          <input
+            type="number" min="0" oninput="validity.valid||(value='');"
+            id="current-price"
+            placeholder="Enter current price"
+          />
+        </label>
+        <button id="submit-button">Submit</button>
         <div id="output-box"></div>
-        <script src="app.js"></script>
+      </main>
 
+      <footer class="footer">
+        <div class="footer-header">Let's connect</div>
+        <ul class="social-links list-non-bullet">
+          <li class="list-item-inline">
+            <a
+              class="link"
+              href="https://www.linkedin.com/in/hitesh-verma-8727921b2/"
+            >
+              Linkedin
+            </a>
+          </li>
+          <li class="list-item-inline">
+            <a class="link" href="https://twitter.com/Trailblazer2711">
+              Twitter
+            </a>
+          </li>
+          <li class="list-item-inline">
+            <a class="link" href="https://github.com/hiteshverma27"> Github </a>
+          </li>
+        </ul>
+        <div style="padding: 1rem">Source code for this project (mark 14) can be viewed on<a href="https://github.com/hiteshverma27/mark-14" class="navigation container nav-brand">GitHub.</a></div>
+        
+      </footer>
+    <script src="app.js"></script>
   </body>
 </html>

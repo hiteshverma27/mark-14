@@ -1,37 +1,38 @@
 var initialPrice = document.querySelector('#initial-price');
 var stocksQuantity = document.querySelector('#stocks-quantity');
 var currentPrice = document.querySelector('#current-price');
-var submitButton = document.querySelector('#submit-button');
+var submitBtn = document.querySelector('#submit-button');
 var outputBox = document.querySelector('#output-box');
 
-submitButton.addEventListener('click', submitHandler);
+submitBtn.addEventListener('click', submitHandler);
 
 function submitHandler(){
-    var ip = initialPrice.value;
-    var qty = stocksQuantity.value;
-    var curr = currentPrice.value;
+    var ip = Number(initialPrice.value);
+    var qty = Number(stocksQuantity.value);
+    var curr = Number(currentPrice.value);
 
     calculateProfitLoss(ip, qty, curr);
-
 }
 
-function calculateProfitLoss(initial, quantity, current){
-    if (initial > current){
-        //write loss statement here
-        var loss = (initial-current)*quantity;
+function  calculateProfitLoss(initial, quantity, current){
+    if(initial > current){
+        var loss = (initial - current)*quantity;
         var lossPer = (loss/initial)*100;
-        console.log(`Your loss is ${loss} and loss percentage is ${lossPer}% `)} 
 
-    
-    else if(current  > initial){
-        //write profit logic here
+
+
+        showOutput(`Your loss is ${loss} and the loss percentage is ${lossPer.toFixed(2)}%`);
+    }else if (current>initial){
         var profit = (current-initial)*quantity;
         var profitPer = (profit/initial)*100;
-        console.log(`Your profit is ${profit} and profit percentage is ${profitPer}% `)
-    }
-    else{
-        //write no profit statement here
-        console.log("No profit no loss!!")
 
+        showOutput(`Your profit is ${profit}  and the profit percentage is ${profitPer.toFixed(2)}%`);
+
+    } else{
+        showOutput(`No profit no loss, but you are awesome!!`);
     }
 }
+
+function showOutput(message){
+    outputBox.innerHTML=message    
+    }
