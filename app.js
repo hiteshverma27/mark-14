@@ -10,8 +10,10 @@ function submitHandler(){
     var ip = Number(initialPrice.value);
     var qty = Number(stocksQuantity.value);
     var curr = Number(currentPrice.value);
-
-    calculateProfitLoss(ip, qty, curr);
+    if(stocksQuantity==""){
+        outputBox.innerText = "Please enter stock quantity"
+    } else{
+    calculateProfitLoss(ip, qty, curr);}
 }
 
 function  calculateProfitLoss(initial, quantity, current){
